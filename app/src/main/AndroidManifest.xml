@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ArrayListActivity" />
-        <activity android:name=".OkHttpActivity"></activity>
+        <activity android:name=".OkHttpActivity" />
+        <activity android:name=".DetailActivity"></activity>
     </application>
 
 </manifest>
