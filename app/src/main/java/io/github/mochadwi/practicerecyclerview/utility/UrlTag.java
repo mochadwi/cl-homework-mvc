@@ -5,8 +5,7 @@ package io.github.mochadwi.practicerecyclerview.utility;
  */
 
 public class UrlTag {
-    videoUrl = "https://www.youtube.com/watch?v=ePpPVE-GGJw&";
-//    public static String baseUrl = "http://bukuapi.azurewebsites.net/api";
-    public static String baseUrl = "http://ibacor.com/api/youtube-converter?u=" + videoUrl + "&k=f0b4e6a00b7bf989baed3e2e76a0ba7f";
+    //    videoUrl = "https://www.youtube.com/watch?v=ePpPVE-GGJw&";
+    public static String baseUrl = "http://bukuapi.azurewebsites.net/api";
     public static String buku = baseUrl + "/buku";
 }
