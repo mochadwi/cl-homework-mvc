@@ -30,11 +30,11 @@ public class ArrayListActivity extends AppCompatActivity {
     }
 
     private void prepareData() {
-        Buku buku = new Buku("K001", "Sherlock Holmes", "Ganesha", 100000);
-        bukuArrayList.add(buku);
-
-        buku = new Buku("K002", "Sherlock Holmes", "Ganesha", 200000);
-        bukuArrayList.add(buku);
+//        Buku buku = new Buku("K001", "Sherlock Holmes", "Ganesha", 100000);
+//        bukuArrayList.add(buku);
+//
+//        buku = new Buku("K002", "Sherlock Holmes", "Ganesha", 200000);
+//        bukuArrayList.add(buku);
 
         bukuAdapter.notifyDataSetChanged();
     }

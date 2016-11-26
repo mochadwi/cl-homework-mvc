@@ -47,6 +47,7 @@ public class OkHttpActivity extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
                         intent.putExtra("Judul", bk.getJudulBuku());
                         intent.putExtra("Penerbit", bk.getPenerbit());
+                        intent.putExtra("Deskripsi", bk.getDeskripsi());
                         startActivityForResult(intent, 0);
                     }
 
@@ -61,7 +62,7 @@ public class OkHttpActivity extends AppCompatActivity {
     }
 
     private void prepareData() {
-        Call call = OkHttp.getDataFromServer(UrlTag.buku);
+        Call call = OkHttp.getDataFromServer(UrlTag.volQuery);
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -73,17 +74,18 @@ public class OkHttpActivity extends AppCompatActivity {
                 Log.e("Status : ", "Get data...");
                 try {
                     JSONObject jsonObject = new JSONObject(response.body().string());
-                    JSONArray jsonArray = new JSONArray(jsonObject.getString("result"));
+                    JSONArray jsonArray = new JSONArray(jsonObject.getString("items"));
 
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject object = jsonArray.getJSONObject(i);
-
+                        JSONObject volInfo = object.getJSONObject("volumeInfo");
 
                         Buku buku = new Buku(
-                                object.getString("kdBuku"),
-                                object.getString("judulBuku"),
-                                object.getString("penerbit"),
-                                object.getInt("harga")
+                                object.getString("id"),
+                                volInfo.getString("title"),
+                                volInfo.getString("publisher"),
+                                volInfo.getString("description"),
+                                0
                         );
 
                         bukuArrayList.add(buku);

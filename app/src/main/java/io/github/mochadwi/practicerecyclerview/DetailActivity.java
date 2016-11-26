@@ -9,6 +9,7 @@ import org.w3c.dom.Text;
 public class DetailActivity extends AppCompatActivity {
     private TextView txtTitle;
     private TextView txtPublisher;
+    private TextView txtDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +20,12 @@ public class DetailActivity extends AppCompatActivity {
 
         txtTitle.setText(getIntent().getStringExtra("Judul"));
         txtPublisher.setText(getIntent().getStringExtra("Penerbit"));
+        txtPublisher.setText(getIntent().getStringExtra("Deskripsi"));
     }
 
     private void initView() {
         txtTitle = (TextView) findViewById(R.id.txt_title);
         txtPublisher = (TextView) findViewById(R.id.txt_publisher);
+        txtDescription = (TextView) findViewById(R.id.txt_description);
     }
 }
