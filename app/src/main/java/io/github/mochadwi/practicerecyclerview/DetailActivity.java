@@ -19,8 +19,8 @@ public class DetailActivity extends AppCompatActivity {
         initView();
 
         txtTitle.setText(getIntent().getStringExtra("Judul"));
-        txtPublisher.setText(getIntent().getStringExtra("Penerbit"));
-        txtPublisher.setText(getIntent().getStringExtra("Deskripsi"));
+//        txtPublisher.setText(getIntent().getStringExtra("Penerbit"));
+        txtDescription.setText(getIntent().getStringExtra("Deskripsi"));
     }
 
     private void initView() {

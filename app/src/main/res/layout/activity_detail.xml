@@ -55,59 +55,65 @@
 
             <TextView
                 android:id="@+id/txt_caption_title"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:text="Judul"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/txt_title"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="The book"
                 app:layout_constraintLeft_toLeftOf="@+id/txt_caption_title"
+                app:layout_constraintRight_toRightOf="@+id/txt_caption_title"
                 app:layout_constraintTop_toBottomOf="@+id/txt_caption_title" />
 
             <TextView
                 android:id="@+id/txt_caption_publisher"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:text="Publisher"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/txt_caption_title" />
+                app:layout_constraintLeft_toLeftOf="@+id/txt_caption_title"
+                app:layout_constraintRight_toRightOf="@+id/txt_caption_title"
+                app:layout_constraintTop_toBottomOf="@+id/txt_title" />
 
             <TextView
                 android:id="@+id/txt_publisher"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="The publishers"
-                app:layout_constraintRight_toRightOf="@+id/txt_caption_publisher"
+                app:layout_constraintLeft_toLeftOf="@+id/txt_caption_title"
+                app:layout_constraintRight_toRightOf="@+id/txt_caption_title"
                 app:layout_constraintTop_toBottomOf="@+id/txt_caption_publisher" />
 
             <TextView
                 android:id="@+id/txt_caption_description"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Description"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="@+id/txt_caption_title"
-                app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+                app:layout_constraintRight_toRightOf="@+id/txt_caption_title"
+                app:layout_constraintTop_toBottomOf="@+id/txt_publisher" />
 
             <TextView
                 android:id="@+id/txt_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="blabalbalbalblablabll lorem ispsum"
-                app:layout_constraintLeft_toLeftOf="@+id/txt_caption_description"
+                app:layout_constraintLeft_toLeftOf="@+id/txt_caption_title"
+                app:layout_constraintRight_toRightOf="@+id/txt_caption_title"
                 app:layout_constraintTop_toBottomOf="@+id/txt_caption_description" />
 
         </android.support.constraint.ConstraintLayout>

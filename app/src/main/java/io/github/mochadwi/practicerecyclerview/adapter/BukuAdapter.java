@@ -35,7 +35,6 @@ public class BukuAdapter extends RecyclerView.Adapter<BukuAdapter.BukuViewHolder
         return new BukuViewHolder(view);
     }
 
-
     /*
     Ngisi apa yang udah di inisialisasi di atas
      */

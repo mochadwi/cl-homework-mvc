@@ -71,31 +71,34 @@ public class OkHttpActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                Log.e("Status : ", "Get data...");
+                Log.e("Status", "Get data...");
                 try {
                     JSONObject jsonObject = new JSONObject(response.body().string());
                     JSONArray jsonArray = new JSONArray(jsonObject.getString("items"));
+//                    Log.e("Json : ", jsonArray.toString());
 
                     for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject object = jsonArray.getJSONObject(i);
-                        JSONObject volInfo = object.getJSONObject("volumeInfo");
+//                        if (i != 1) {
+                            JSONObject object = jsonArray.getJSONObject(i);
+                            JSONObject volInfo = object.getJSONObject("volumeInfo");
+                            // Log.e("Volume Info", volInfo.getString("description"));
 
-                        Buku buku = new Buku(
-                                object.getString("id"),
-                                volInfo.getString("title"),
-                                volInfo.getString("publisher"),
-                                volInfo.getString("description"),
-                                0
-                        );
+                            Buku buku = new Buku(
+                                    object.getString("id"),
+                                    volInfo.getString("title"),
+                                    volInfo.getString("publisher"),
+                                    volInfo.getString("description"),
+                                    0
+                            );
+                            bukuArrayList.add(buku);
 
-                        bukuArrayList.add(buku);
-
-                        OkHttpActivity.this.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                bukuAdapter.notifyDataSetChanged();
-                            }
-                        });
+                            OkHttpActivity.this.runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    bukuAdapter.notifyDataSetChanged();
+                                }
+                            });
+//                        }
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
